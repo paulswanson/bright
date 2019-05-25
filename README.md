@@ -17,10 +17,13 @@ This script deals with the following scenario:
 
 To test if this applies to you, run the following two commands:
 
- * acpi\_listen
-  * If the result includes "video/brightnessdown" and "video/brightnessup" then they're ACPI hotkeys (not regular keystrokes)
- * ls -l /sys/class/backlight/intel\_backlight/
-  * If there's a bunch of files then you've probably got the Intel backlight driver
+        acpi\_listen
+
+If the result includes "video/brightnessdown" and "video/brightnessup" then they're ACPI hotkeys (not regular keystrokes)
+
+        ls -l /sys/class/backlight/intel\_backlight/
+
+If there's a bunch of files then you've probably got the Intel backlight driver
 
 You can simply test this script as is:
 
