@@ -27,8 +27,8 @@ If there's a bunch of files then you've probably got the Intel backlight driver
 
 You can simply test this script as is:
 
-        sudo bright up
-        sudo bright down
+        sudo bright.sh up
+        sudo bright.sh down
 
 If the screen brightness goes up and down accordingly, congratulations you're almost there.
 
