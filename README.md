@@ -19,7 +19,7 @@ To test if this applies to you, run the following two commands:
 
         acpi_listen
 
-If the result includes "video/brightnessdown" and "video/brightnessup" then they're ACPI hotkeys (not regular keystrokes)
+At the prompt, press your brightness hotkeys. If the result includes "video/brightnessdown" and "video/brightnessup" then they're ACPI hotkeys (not regular keystrokes)
 
         ls -l /sys/class/backlight/intel_backlight/
 
