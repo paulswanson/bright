@@ -1,6 +1,6 @@
 #!/bin/sh
  
-#  Copyright (C) 2016 Paul Swanson
+#  Copyright (C) 2019 Paul Swanson
 # 
 #  Licensed under the GNU General Public License Version 2
 # 
@@ -91,7 +91,7 @@ if [ "$DIRECTION" -eq "1" ]; then
 	fi
 	echo "$NEWB" > $B_FILE
 else
-	NEWB=$(($CURRB-($MAXB/10)))
+	NEWB=$(($CURRB-($MAXB/$DIVISOR)))
 
 	if [ "$NEWB" -lt "0" ]; then
 		NEWB=0
