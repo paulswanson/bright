@@ -26,7 +26,7 @@
 
 # This script enables the brightness up / down (ACPI) hotkeys to adjust an Intel backlight
 #
-# Tested on MX Linux 18.2 (Debian based) kernel 4.19.0-1-amd64, on a Dell Latitude E7470; good luck to you!
+# Tested on MX Linux 18.3 (Debian based) kernel 4.19.0-1-amd64, on a Dell Latitude E7470; good luck to you!
 #
 # See "man acpid" for implementation details. But basically, this goes in /etc/acpi and events entries are created under /etc/acpi/events like so:
 #
@@ -85,9 +85,13 @@ else
 fi
 
 if [ "$DIRECTION" -eq "1" ]; then
-	NEWB=$(($CURRB+($MAXB/$DIVISOR)))
-	if [ "$NEWB" -gt "$MAXB" ]; then
-		NEWB=$MAXB
+        if [ "$CURRB" -eq "0" ]; then
+                NEWB=1
+        else
+		NEWB=$(($CURRB+($MAXB/$DIVISOR)))
+		if [ "$NEWB" -gt "$MAXB" ]; then
+			NEWB=$MAXB
+		fi
 	fi
 	echo "$NEWB" > $B_FILE
 else
